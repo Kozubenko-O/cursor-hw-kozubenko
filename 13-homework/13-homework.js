@@ -12,11 +12,14 @@ async function getRandomChinese(length) {
     if (length < 1) return 'Введене число < 1';
     let string = '';
     while (count < length) {
-       await promiseReturn().then(char => string = string + char);
+      await promiseReturn().then(char => string = string + char);
        count++;
     }
+    if (length === count)
+        count = 0;
+    console.log(string);
     return string;
 }
 
 
-getRandomChinese(4).then(result => console.log(result));
+getRandomChinese(4);
