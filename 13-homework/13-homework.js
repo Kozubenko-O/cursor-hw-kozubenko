@@ -17,9 +17,19 @@ async function getRandomChinese(length) {
     }
     if (length === count)
         count = 0;
-    console.log(string);
     return string;
 }
 
 
-getRandomChinese(4);
+// getData створена  для зручного тестування через консоль
+function getData(length) {
+    getRandomChinese(length).then(res => {
+        if (document.querySelector("span"))
+            document.querySelector("span").remove();
+        const span = document.createElement('span');
+        span.innerHTML = res;
+        document.body.append(span);
+    });
+}
+
+getData(4);
