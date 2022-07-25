@@ -11,7 +11,7 @@ buttonFontUp.innerText = 'Font Up';
 buttonFontDown.innerText = 'Font Down';
 buttonNextId.innerText = 'next Id';
 span.innerHTML = 'Test font size';
-span.style.fontSize = '2px';
+span.style.fontSize = '0px';
 span.style.display = 'block';
 spanIdGenerate.style.float = 'right';
 spanIdGenerate.style.paddingRight = '50px';
@@ -29,7 +29,7 @@ function* newFontGenerator(startValue) {
     let c;
     span.style.fontSize = startValue + 'px';
     c = yield startValue;
-    while (startValue) {
+    while (true) {
         if (c === 'up') fontValue += 2;
         if (c === 'down' && fontValue > 2) fontValue -= 2;
         span.style.fontSize = fontValue + 'px';
